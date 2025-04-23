@@ -9,9 +9,20 @@ exports.createRef = (articlesData) => {
   if (articlesData.length === 0) {
     return {};
   }
-  const result = {}
+  const result = {};
   articlesData.forEach((article) => {
     result[article.title] = article.article_id;
-  }) 
+  });
   return result;
+};
+
+exports.createArticlesLookupObject = (articlesData) => {
+  if (articlesData.length === 0) {
+    return {};
+  }
+  const lookupObject = {};
+  articlesData.forEach((article) => {
+    lookupObject[article.title] = article.article_id;
+  });
+  return lookupObject;
 };
